@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Universal Dental Clinic</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#f5fbff;
+overflow-x:hidden;
+color:#111;
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:16px 7%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,.95);
+backdrop-filter:blur(12px);
+z-index:1000;
+box-shadow:0 3px 20px rgba(0,0,0,.06);
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.logo img{
+width:60px;
+height:60px;
+border-radius:50%;
+object-fit:cover;
+}
+
+.logo h2{
+font-size:28px;
+font-weight:800;
+color:#082f7a;
+}
+
+.logo span{
+color:#19bfd3;
+}
+
+nav ul{
+display:flex;
+gap:35px;
+list-style:none;
+}
+
+nav ul a{
+text-decoration:none;
+color:#222;
+font-weight:500;
+transition:.3s;
+}
+
+nav ul a:hover{
+color:#19bfd3;
+}
+
+.menu{
+display:none;
+font-size:32px;
+cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+padding:150px 7% 90px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:60px;
+flex-wrap:wrap;
+}
+
+.hero-text{
+flex:1;
+min-width:300px;
+}
+
+.hero-text h4{
+color:#19bfd3;
+margin-bottom:18px;
+letter-spacing:2px;
+}
+
+.hero-text h1{
+font-size:72px;
+line-height:1.1;
+color:#082f7a;
+margin-bottom:25px;
+}
+
+.hero-text h1 span{
+color:#19bfd3;
+}
+
+.hero-text p{
+font-size:18px;
+line-height:1.9;
+color:#555;
+margin-bottom:35px;
+max-width:650px;
+}
+
+.hero-buttons{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.primary-btn{
+padding:16px 35px;
+border:none;
+border-radius:40px;
+background:linear-gradient(45deg,#082f7a,#19bfd3);
+color:white;
+font-weight:600;
+font-size:16px;
+cursor:pointer;
+box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+.secondary-btn{
+padding:16px 35px;
+border-radius:40px;
+border:2px solid #19bfd3;
+background:white;
+color:#19bfd3;
+font-weight:600;
+cursor:pointer;
+}
+
+.hero-image{
+flex:1;
+min-width:300px;
+text-align:center;
+}
+
+.hero-image img{
+width:100%;
+max-width:560px;
+border-radius:40px;
+box-shadow:0 20px 45px rgba(0,0,0,.15);
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0);}
+}
+
+/* GENERAL */
+
+section{
+padding:100px 7%;
+}
+
+.title{
+text-align:center;
+margin-bottom:70px;
+}
+
+.title h2{
+font-size:52px;
+color:#082f7a;
+margin-bottom:15px;
+}
+
+.title p{
+font-size:18px;
+color:#666;
+}
+
+/* STATS */
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:30px;
+}
+
+.stat-card{
+background:white;
+padding:40px;
+border-radius:30px;
+text-align:center;
+box-shadow:0 10px 35px rgba(0,0,0,.06);
+transition:.4s;
+}
+
+.stat-card:hover{
+transform:translateY(-10px);
+}
+
+.stat-card h2{
+font-size:52px;
+color:#19bfd3;
+margin-bottom:10px;
+}
+
+/* SERVICES */
+
+.services-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.service-card{
+background:white;
+padding:40px;
+border-radius:30px;
+box-shadow:0 10px 35px rgba(0,0,0,.06);
+transition:.4s;
+}
+
+.service-card:hover{
+transform:translateY(-10px);
+}
+
+.service-icon{
+font-size:55px;
+margin-bottom:20px;
+}
+
+.service-card h3{
+font-size:26px;
+margin-bottom:15px;
+color:#082f7a;
+}
+
+.service-card p{
+line-height:1.8;
+color:#666;
+}
+
+/* WHY */
+
+.why-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.why-card{
+background:white;
+padding:40px;
+border-radius:30px;
+box-shadow:0 10px 35px rgba(0,0,0,.06);
+text-align:center;
+transition:.4s;
+}
+
+.why-card:hover{
+transform:translateY(-10px);
+}
+
+.why-icon{
+font-size:55px;
+margin-bottom:20px;
+}
+
+/* DOCTOR */
+
+.doctor-card{
+max-width:450px;
+margin:auto;
+background:white;
+padding:30px;
+border-radius:30px;
+text-align:center;
+box-shadow:0 10px 35px rgba(0,0,0,.06);
+}
+
+.doctor-card img{
+width:100%;
+height:420px;
+object-fit:cover;
+border-radius:25px;
+margin-bottom:20px;
+}
+
+.doctor-card h3{
+font-size:30px;
+color:#082f7a;
+margin-bottom:10px;
+}
+
+.doctor-card p{
+line-height:1.8;
+color:#555;
+}
+
+/* GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.gallery img{
+width:100%;
+border-radius:25px;
+box-shadow:0 12px 30px rgba(0,0,0,.12);
+transition:.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.03);
+}
+
+/* TESTIMONIALS */
+
+.testimonial-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.testimonial-card{
+background:white;
+padding:40px;
+border-radius:30px;
+box-shadow:0 10px 35px rgba(0,0,0,.06);
+text-align:center;
+}
+
+/* BOOKING */
+
+.booking{
+background:linear-gradient(135deg,#082f7a,#19bfd3);
+padding:60px;
+border-radius:40px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+color:white;
+}
+
+.booking-info h2{
+font-size:52px;
+margin-bottom:25px;
+}
+
+.booking-info p{
+line-height:1.9;
+margin-bottom:15px;
+}
+
+.booking-form{
+background:white;
+padding:40px;
+border-radius:30px;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea{
+width:100%;
+padding:16px;
+margin-bottom:18px;
+border-radius:14px;
+border:1px solid #ddd;
+font-size:15px;
+}
+
+.booking-form button{
+width:100%;
+padding:16px;
+border:none;
+border-radius:14px;
+background:linear-gradient(45deg,#082f7a,#19bfd3);
+color:white;
+font-size:17px;
+font-weight:600;
+cursor:pointer;
+}
+
+/* FAQ */
+
+.faq-container{
+max-width:900px;
+margin:auto;
+}
+
+.faq-item{
+background:white;
+margin-bottom:20px;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,.06);
+}
+
+.faq-question{
+width:100%;
+padding:22px;
+border:none;
+background:white;
+font-size:18px;
+font-weight:600;
+text-align:left;
+cursor:pointer;
+}
+
+.faq-answer{
+display:none;
+padding:0 22px 22px;
+color:#666;
+line-height:1.8;
+}
+
+.faq-item.active .faq-answer{
+display:block;
+}
+
+/* MAP */
+
+.map iframe{
+width:100%;
+height:450px;
+border:none;
+border-radius:30px;
+box-shadow:0 10px 35px rgba(0,0,0,.08);
+}
+
+/* FOOTER */
+
+footer{
+background:#031935;
+padding:60px 7%;
+text-align:center;
+color:white;
+}
+
+footer h2{
+font-size:40px;
+margin-bottom:15px;
+}
+
+footer p{
+color:#ccc;
+line-height:1.8;
+}
+
+/* FLOATING */
+
+.whatsapp,
+.call-btn{
+position:fixed;
+right:25px;
+width:65px;
+height:65px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:30px;
+color:white;
+text-decoration:none;
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+z-index:999;
+}
+
+.whatsapp{
+bottom:25px;
+background:#25D366;
+}
+
+.call-btn{
+bottom:105px;
+background:#082f7a;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:950px){
+
+nav ul{
+display:none;
+position:absolute;
+top:90px;
+left:0;
+width:100%;
+background:white;
+flex-direction:column;
+padding:25px;
+text-align:center;
+}
+
+nav ul.show{
+display:flex;
+}
+
+.menu{
+display:block;
+}
+
+.hero{
+text-align:center;
+}
+
+.hero-buttons{
+justify-content:center;
+}
+
+.hero-text h1{
+font-size:46px;
+}
+
+.booking{
+grid-template-columns:1fr;
+padding:35px;
+}
+
+.title h2,
+.booking-info h2{
+font-size:38px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo">
+<img src="c:\Users\user\Downloads\WhatsApp Image 2026-05-11 at 4.41.18 PM.jpeg">
+<h2>Universal <span>Dental</span></h2>
+</div>
+
+<ul id="navLinks">
+<li><a href="#services">Services</a></li>
+<li><a href="#doctor">Doctor</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#booking">Appointment</a></li>
+<li><a href="#map">Location</a></li>
+</ul>
+
+<div class="menu" onclick="toggleMenu()">☰</div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h4>PREMIUM DENTAL CARE</h4>
+
+<h1>Healthy Smile,<br><span>Confident Life</span></h1>
+
+<p>
+Universal Dental Clinic provides advanced dental treatment,
+cosmetic dentistry, smile enhancement and trusted oral care
+with modern technology and experienced professionals.
+</p>
+
+<div class="hero-buttons">
+<button class="primary-btn" onclick="goBooking()">Book Appointment</button>
+<button class="secondary-btn">Explore Services</button>
+</div>
+
+</div>
+
+<div class="hero-image">
+    <img src="c:\Users\user\Downloads\WhatsApp Image 2026-05-11 at 4.41.18 PM.jpeg">
+</div>
+
+</section>
+
+<!-- STATS -->
+
+<section>
+
+<div class="stats-grid">
+
+<div class="stat-card">
+<h2>5000+</h2>
+<p>Happy Patients</p>
+</div>
+
+<div class="stat-card">
+<h2>10+</h2>
+<p>Years Experience</p>
+</div>
+
+<div class="stat-card">
+<h2>24/7</h2>
+<p>Emergency Support</p>
+</div>
+
+<div class="stat-card">
+<h2>100%</h2>
+<p>Trusted Care</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<div class="title">
+<h2>Dental Services</h2>
+<p>Advanced dental and smile care solutions</p>
+</div>
+
+<div class="services-grid">
+
+<div class="service-card">
+<div class="service-icon">🦷</div>
+<h3>Dental Consultation</h3>
+<p>Professional dental checkup and oral examination.</p>
+</div>
+
+<div class="service-card">
+<div class="service-icon">✨</div>
+<h3>Teeth Whitening</h3>
+<p>Safe and advanced smile whitening treatment.</p>
+</div>
+
+<div class="service-card">
+<div class="service-icon">😁</div>
+<h3>Cosmetic Dentistry</h3>
+<p>Smile makeover and aesthetic dental procedures.</p>
+</div>
+
+<div class="service-card">
+<div class="service-icon">🛡️</div>
+<h3>Root Canal</h3>
+<p>Painless root canal treatment using modern methods.</p>
+</div>
+
+<div class="service-card">
+<div class="service-icon">🦷</div>
+<h3>Dental Implants</h3>
+<p>Permanent replacement for missing teeth.</p>
+</div>
+
+<div class="service-card">
+<div class="service-icon">👨‍⚕️</div>
+<h3>Orthodontics</h3>
+<p>Professional braces and teeth alignment treatment.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- WHY -->
+
+<section>
+
+<div class="title">
+<h2>Why Choose Us?</h2>
+<p>Trusted dental care with modern facilities</p>
+</div>
+
+<div class="why-grid">
+
+<div class="why-card">
+<div class="why-icon">🏥</div>
+<h3>Modern Equipment</h3>
+<p>Advanced technology and modern dental instruments.</p>
+</div>
+
+<div class="why-card">
+<div class="why-icon">⭐</div>
+<h3>Trusted Service</h3>
+<p>Thousands of satisfied patients trust our clinic.</p>
+</div>
+
+<div class="why-card">
+<div class="why-icon">🦷</div>
+<h3>Advanced Treatments</h3>
+<p>Modern cosmetic and restorative dental solutions.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- DOCTOR -->
+
+<section id="doctor">
+
+<div class="title">
+<h2>Our Specialist</h2>
+<p>Experienced and trusted dental professional</p>
+</div>
+
+<div class="doctor-card">
+
+<img src="https://scontent.fktm19-1.fna.fbcdn.net/v/t39.30808-6/549994424_1987728765296810_4174882707969442865_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_ohc=M8FuJkvLyNMQ7kNvwHl4O84&_nc_oc=Ado02gXeVdCsKKdYoZ6MFM8HTIHfQwGCn6fCglmHX23Fg3E7FuSpSDxP6YzyWip7RVFCOCL5Q3XDjbDdYqfHVdU2&_nc_zt=23&_nc_ht=scontent.fktm19-1.fna&_nc_gid=PcZGHjfa4rLW8PyqZwnrlQ&_nc_ss=7b2a8&oh=00_Af58aUVqaZHDqWAcR3GP-0OlKEXly5N9e4siz1uec4BOZg&oe=6A0C7FA2">
+
+<h3>Dr. Prakash Gautam</h3>
+
+<p>
+Professional Dental Specialist<br>
+Smile & Cosmetic Dentistry Expert<br>
+Available Daily
+</p>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section id="gallery">
+
+<div class="title">
+<h2>Clinic Gallery</h2>
+<p>Modern dental facilities and care environment</p>
+</div>
+
+<div class="gallery">
+
+<video src="">
+
+<img src="115B9D8A-5A6E-4CF2-851C-B9F381C70EEA.jpeg">
+
+<img src="D31E6CF3-BCE8-4F69-A7A9-18624287ECC3.jpeg">
+
+</div>
+
+</section>
+
+<!-- TESTIMONIALS -->
+
+<section>
+
+<div class="title">
+<h2>Patient Testimonials</h2>
+<p>What our patients say</p>
+</div>
+
+<div class="testimonial-grid">
+
+<div class="testimonial-card">
+<h3>⭐⭐⭐⭐⭐</h3>
+<p>
+Excellent dental treatment and very friendly environment.
+</p>
+</div>
+
+<div class="testimonial-card">
+<h3>⭐⭐⭐⭐⭐</h3>
+<p>
+Professional dentist and modern facilities. Highly recommended.
+</p>
+</div>
+
+<div class="testimonial-card">
+<h3>⭐⭐⭐⭐⭐</h3>
+<p>
+Very satisfied with smile treatment and consultation service.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- BOOKING -->
+
+<section id="booking">
+
+<div class="booking">
+
+<div class="booking-info">
+
+<h2>Book Appointment</h2>
+
+<p><strong>Clinic:</strong> Universal Dental Clinic</p>
+
+<p><strong>Address:</strong> Basundhara, Kathmandu</p>
+
+<p><strong>Phone:</strong> +977 9851226146</p>
+
+<p><strong>Hours:</strong> 6 AM - 10 PM</p>
+
+<p>
+Appointments are confirmed directly through WhatsApp.
+</p>
+
+</div>
+
+<div class="booking-form">
+
+<form id="appointmentForm">
+
+<input type="text" placeholder="Patient Name" required>
+
+<input type="tel" placeholder="Phone Number" required>
+
+<input type="date" required>
+
+<select required>
+<option>Select Service</option>
+<option>Dental Consultation</option>
+<option>Teeth Whitening</option>
+<option>Root Canal</option>
+<option>Dental Implants</option>
+<option>Orthodontics</option>
+</select>
+
+<textarea rows="5" placeholder="Message"></textarea>
+
+<button type="submit">Confirm Appointment</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FAQ -->
+
+<section>
+
+<div class="title">
+<h2>Frequently Asked Questions</h2>
+<p>Quick answers for patients</p>
+</div>
+
+<div class="faq-container">
+
+<div class="faq-item">
+<button class="faq-question">What are your opening hours?</button>
+<div class="faq-answer">
+<p>We are open daily from 6 AM to 10 PM.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">Can I book through WhatsApp?</button>
+<div class="faq-answer">
+<p>Yes, appointments are confirmed through WhatsApp.</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">Do you provide emergency dental care?</button>
+<div class="faq-answer">
+<p>Yes, emergency dental support is available.</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- MAP -->
+
+<section id="map">
+
+<div class="title">
+<h2>Find Our Location</h2>
+<p>Basundhara, Kathmandu</p>
+</div>
+
+<div class="map">
+
+<iframe
+src="https://maps.google.com/maps?q=Basundhara%20Kathmandu&t=&z=13&ie=UTF8&iwloc=&output=embed">
+</iframe>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<h2>Universal Dental Clinic</h2>
+
+<p>Your Smile, Our Priority</p>
+
+<p>📍 Basundhara, Kathmandu</p>
+
+<p>📞 +977 9851226146</p>
+
+<p>© 2026 Universal Dental Clinic. All Rights Reserved.</p>
+
+</footer>
+
+<!-- FLOAT BUTTONS -->
+
+<a class="whatsapp"
+href="https://wa.me/9779851226146"
+target="_blank">
+☎
+</a>
+
+<a class="call-btn"
+href="tel:+9779851226146">
+📞
+</a>
+
+<!-- JS -->
+
+<script>
+
+function toggleMenu(){
+document.getElementById("navLinks").classList.toggle("show");
+}
+
+function goBooking(){
+document.getElementById("booking").scrollIntoView({
+behavior:"smooth"
+});
+}
+
+document.getElementById("appointmentForm")
+.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+let name=this.querySelector('input[type="text"]').value;
+let phone=this.querySelector('input[type="tel"]').value;
+let date=this.querySelector('input[type="date"]').value;
+let service=this.querySelector('select').value;
+let message=this.querySelector('textarea').value;
+
+let text=
+`🦷 Universal Dental Appointment
+
+👤 Patient: ${name}
+📞 Phone: ${phone}
+📅 Date: ${date}
+🦷 Service: ${service}
+💬 Message: ${message}`;
+
+let url=
+`https://wa.me/9779851226146?text=${encodeURIComponent(text)}`;
+
+window.open(url,'_blank');
+
+this.reset();
+
+});
+
+/* FAQ */
+
+const faqItems=document.querySelectorAll(".faq-item");
+
+faqItems.forEach(item=>{
+
+const btn=item.querySelector(".faq-question");
+
+btn.addEventListener("click",()=>{
+
+item.classList.toggle("active");
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
